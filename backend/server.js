@@ -17,7 +17,7 @@ io.on('connection', socket => {
     //when user joins a room
     socket.on('join-room', (roomId, userId, streamId) => {
         console.log(`${userId} has joined ${roomId}`);
-        socket.join(roomId);q
+        socket.join(roomId);
         //emit to all users in the room except the user who joined
         socket.to(roomId).emit('user-connected', userId);
 
