@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import styles from '../../styles/app-styles/video-layout.module.scss';
 
 export default function Video({ stream }) {
   const localVideo = React.createRef();
@@ -14,8 +15,16 @@ export default function Video({ stream }) {
 
   return (
     <div className="video-container">
-      <video style={{ height: 100, width: 100 }} ref={localVideo} autoPlay muted/>
-      <p>{stream.id}</p>
+      <div className={styles.videoItem}>
+        Parent
+        <video
+          style={{ height: 100, width: 100 }}
+          ref={localVideo}
+          autoPlay
+          muted
+        />
+        <p>{stream.id}</p>
+      </div>
     </div>
   );
 }
